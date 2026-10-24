@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "custom-kernels"
+version = "0.1.0"
+description = "vLLM plugin with faster Gemma 4 image encoding"
+requires-python = ">=3.10"
+
+[project.entry-points."vllm.general_plugins"]
+custom_kernels = "custom_kernels:register"
+
+[tool.setuptools]
+packages = ["custom_kernels"]
